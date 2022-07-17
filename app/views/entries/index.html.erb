@@ -1,14 +1,43 @@
-<p style="color: green"><%= notice %></p>
+<% content_for(:title) do %> FoodLog <%= Time.zone.now.to_s(:nice_date) %> <%
+end %>
 
-<h1>Entries</h1>
-
-<div id="entries">
+<div class="columns mt-6 is-centered">
   <% @entries.each do |entry| %>
-    <%= render entry %>
-    <p>
-      <%= link_to "Show this entry", entry %>
-    </p>
+  <div class="column is-one-quarter">
+    <div class="card">
+      <header class="card-header">
+        <p class="card-header-title"><%= entry.meal_type %></p>
+      </header>
+      <div class="card-content">
+        <div class="content">
+          <p>
+            <span class="has-text-weight-bold"><%= entry.calories %> </span>
+            Calories
+          </p>
+          <p>
+            <span class="has-text-weight-bold"><%= entry.proteins %> </span>
+            Proteins
+          </p>
+          <p>
+            <span class="has-text-weight-bold"
+              ><%= entry.carbohydrates %>
+            </span>
+            Carbohydrates
+          </p>
+          <p>
+            <span class="has-text-weight-bold"><%= entry.fats %> </span> Fats
+          </p>
+          <p class="italic">
+            Logged <%= time_ago_in_words(entry.created_at) %> ago
+          </p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <p>
+          <%= link_to "Show this entry", entry, class: "card-footer-item" %>
+        </p>
+      </div>
+    </div>
+  </div>
   <% end %>
 </div>
-
-<%= link_to "New entry", new_entry_path %>

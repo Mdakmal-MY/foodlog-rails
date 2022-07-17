@@ -1,0 +1,33 @@
+<section class="hero is-smaill is-link">
+  <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+          <%= link_to root_path, class: "navbar-item" do %>
+            <span class="has-text-weight-bold is-size-4 ml-3">FoodLog</span>
+          <% end %>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <div class="navbar-item">
+            <%= link_to "Create New Log", new_entry_path, class: "button is-success" %>
+              </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  <div class="hero-body">
+    <div class="has-text-centered">
+      <p class="title">
+      <% if content_for(:title) %>
+        <%= yield :title%>
+        <% else %>
+        Food Log
+        <% end %>
+      </p>
+      <p class="subtitle">
+        Best diet practise
+      </p>
+    </div>  
+  </div>
+  
+</section>

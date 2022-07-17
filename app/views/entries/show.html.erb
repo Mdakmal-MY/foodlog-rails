@@ -1,10 +1,11 @@
-<p style="color: green"><%= notice %></p>
+<div class="columns is-centered mt-2">
+  <div class="column is-one-third">
+    <%= render @entry %>
 
-<%= render @entry %>
-
-<div>
-  <%= link_to "Edit this entry", edit_entry_path(@entry) %> |
-  <%= link_to "Back to entries", entries_path %>
-
-  <%= button_to "Destroy this entry", @entry, method: :delete %>
+    <div class="column">
+      <%= link_to "Edit this entry", edit_entry_path(@entry) %> | 
+      <%= link_to "Back to entries", entries_path %> 
+      <%= button_to "Destroy this entry", @entry, method: :delete, class: "button is-danger is-small"%>
+    </div>
+  </div>
 </div>
