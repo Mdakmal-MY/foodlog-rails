@@ -1,5 +1,5 @@
-<% content_for(:title) do %> FoodLog <%= Time.zone.now.to_s(:nice_date) %> <%
-end %>
+<% content_for(:title) do %> FoodLog <%= Time.zone.now.to_s(:nice_date) %> 
+<% end %>
 
 <div class="columns mt-6 is-centered">
   <% @entries.each do |entry| %>

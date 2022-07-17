@@ -2,7 +2,7 @@
   <div class="column is-one-third">
     <%= render @entry %>
 
-    <div class="column">
+    <div class="row">
       <%= link_to "Edit this entry", edit_entry_path(@entry) %> | 
       <%= link_to "Back to entries", entries_path %> 
       <%= button_to "Destroy this entry", @entry, method: :delete, class: "button is-danger is-small"%>

@@ -1,27 +1,32 @@
+<% content_for(:title) do %>
+  <span><%=entry.meal_type %> &ndash; <%= Time.zone.now.to_s(:nice_date) %></span>
+<% end %>
+<nav class="panel is-link">
+
 <div id="<%= dom_id entry %>">
-  <p>
-    <strong>Meal type:</strong>
+  <p class="panel-heading">
     <%= entry.meal_type %>
   </p>
 
-  <p>
-    <strong>Calories:</strong>
+  <p class="panel-block">
+    Calories:
     <%= entry.calories %>
   </p>
 
-  <p>
-    <strong>Proteins:</strong>
+  <p class="panel-block">  
+    Proteins:
     <%= entry.proteins %>
   </p>
 
-  <p>
-    <strong>Carbohydrates:</strong>
+  <p class="panel-block">
+    Carbohydrates:
     <%= entry.carbohydrates %>
   </p>
 
-  <p>
-    <strong>Fats:</strong>
+  <p class="panel-block">
+    Fats:
     <%= entry.fats %>
   </p>
 
 </div>
+</nav>
