@@ -1,14 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  meal_type: MyString
+breakfast:
+  meal_type: breackfsat
   calories: 1
   proteins: 1
   carbohydrates: 1
   fats: 1
 
-two:
-  meal_type: MyString
+lunch:
+  meal_type: lunch
   calories: 1
   proteins: 1
   carbohydrates: 1

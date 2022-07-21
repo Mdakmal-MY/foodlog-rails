@@ -10,8 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_16_102250) do
-  create_table "entries", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2022_07_21_173808) do
+  create_table "categories", charset: "utf8mb3", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "entries", charset: "utf8mb3", force: :cascade do |t|
     t.string "meal_type"
     t.integer "calories"
     t.integer "proteins"
@@ -19,6 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_16_102250) do
     t.integer "fats"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_entries_on_category_id"
   end
 
 end

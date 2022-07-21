@@ -1,24 +1,21 @@
 # README
+in-progress
+Foodlog - RoR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Installation
+- run bundle Installation
 
-Things you may want to cover:
+- rails g scaffold (create all)
+- rails g model (create model)
+...
 
-* Ruby version
+* Serve
+- rails server
 
-* System dependencies
+* DB migrate
 
-* Configuration
+* Rails Console
+- rails Console
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Testing
+- rails test test/../..

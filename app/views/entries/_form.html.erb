@@ -18,6 +18,13 @@
     <%= form.label :meal_type, style: "display: block", class:"label" %>
     <%= form.text_field :meal_type, class: "input" %>
   </div>
+  <!-- Add Categories -->
+  <div>
+    <%= form.label :category_id, style: "display: block", class:"label"  %>
+    <div class="select">
+      <%= form.select :category_id, Category.all.collect {|u| [u.title, u.id]}%>
+    </div>
+  </div>
 
   <div>
     <%= form.label :calories, style: "display: block", class:"label"  %>
