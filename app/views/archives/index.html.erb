@@ -1,0 +1,48 @@
+<div class="columns is-centered mt-5">
+    <div class="column is-half">
+        <% @entries.each do |day, entry|%>
+            <h3 class="is-size-4 has-text-weight-bold mb-4 has-text-centered">
+                Entry log for <%= day%>
+            </h3>
+            <nav class="level is-mobile">
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Calories</p>
+                        <p class="title"><%= entry.pluck(:calories).sum%></p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Protein</p>
+                        <p class="title"><%= entry.pluck(:proteins).sum%>g</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Carbohydrate</p>
+                        <p class="title"><%= entry.pluck(:carbohydrates).sum%>g</p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Fat</p>
+                        <p class="title"><%= entry.pluck(:fats).sum%>g</p>
+                    </div>
+                </div>
+            </nav>
+            <% entry.each do |ent|%>
+                <%= link_to entry_path(ent) do%>
+                    <div class="card">
+                        <div class="card-content">
+                            <strong><%= ent.meal_type %></strong><br/>
+                            <%= ent.calories%> Calories
+                            <%= ent.proteins%>g Protein
+                            <%= ent.carbohydrates%>g Carbohydrates
+                            <%= ent.fats%>g Fat
+                        </div>
+                    </div>
+                <% end %>
+            <% end %>
+        <% end %>
+    </div>
+</div>

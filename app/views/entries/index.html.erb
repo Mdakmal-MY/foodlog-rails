@@ -1,4 +1,4 @@
-<% content_for(:title) do %> FoodLog <%= Time.zone.now.to_s(:nice_date) %> 
+<% content_for(:title) do %> FoodLog <%= Time.zone.now.to_fs(:nice_date) %> 
 <% end %>
 
 <div class="columns mt-6 is-centered">
@@ -40,4 +40,8 @@
     </div>
   </div>
   <% end %>
+</div>
+
+<div class="columns is-centered mt-5">
+  <%= link_to "View all log", archives_index_path, class: "button is-link is-outlined is-centered" %>
 </div>

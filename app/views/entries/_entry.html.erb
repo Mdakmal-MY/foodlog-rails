@@ -1,5 +1,5 @@
 <% content_for(:title) do %>
-  <span><%=entry.meal_type %> &ndash; <%= Time.zone.now.to_s(:nice_date) %></span>
+  <span><%=entry.meal_type %> &ndash; <%= Time.zone.now.to_fs(:nice_date) %></span>
 <% end %>
 <nav class="panel is-link">
 
